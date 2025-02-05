@@ -203,7 +203,7 @@ namespace TextRPG_Assignment
 
                             for (int i = 0; i < warrior.EquippedItems.Count; i++)
                             {
-                                if (selectedItem.Kine() == warrior.EquippedItems[i].Kine())
+                                if (selectedItem.Kind() == warrior.EquippedItems[i].Kind())
                                 {
                                     Console.WriteLine("같은 종류의 무기는 들 수 없습니다. 장착을 원하시면 기존 장비를 해제해야 합니다.");
                                     Thread.Sleep(2000);
@@ -331,7 +331,7 @@ namespace TextRPG_Assignment
 
         public interface IItem
         {
-            string Kine();
+            string Kind();
             string Name { get; set; }
 
             public string Description(Warrior warrior);
@@ -347,7 +347,7 @@ namespace TextRPG_Assignment
 
         public class Sword(string name, int ability, string description, int money) : IItem
         {
-            public string Kine()
+            public string Kind()
             {
                 return "isSword";
             }
@@ -376,7 +376,7 @@ namespace TextRPG_Assignment
 
         public class Shied(string name, int ability, string description, int money) : IItem
         {
-            public string Kine()
+            public string Kind()
             {
                 return "isShied";
             }
@@ -405,7 +405,7 @@ namespace TextRPG_Assignment
 
         public class Armor(string name, int ability, string description, int money) : IItem
         {
-            public string Kine()
+            public string Kind()
             {
                 return "isArmor";
             }
